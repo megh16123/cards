@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SPEAKER</title>
+    <link rel="stylesheet" href="my.css">
+</head>
+<body>
+    <div>
+        <input type="text" id="text-to-speech" placeholder="Enter text to speak...."  >
+       
+    </div>
+    <div>
+        <button type="button" onclick="textToAudio()">speak</button>
+    </div>
+    <div id="lol" style="color: red;">
+    
+    </div>
+    <script>
+        function valo(){
+        let md = document.getElementById('text-to-speech').value;
+        console.log(md);
+        }
+    </script>
+    <script>
+        function textToAudio(){
+            let msg = document.getElementById("text-to-speech").value;
+            let status = document.getElementById('lol');
+            let speech = new SpeechSynthesisUtterance();
+            speech.lang = "en-UK";
+            kk = msg;
+            
+            speech.text = msg;
+            speech.volume = 1;
+            speech.rate = 1;
+            speech.pitch = 1;
+            status.innerText = kk;
+            status.style.color = 'green';
+            window.speechSynthesis.speak(speech);
+            
+        }
+    </script>
+
+   
+</script>
+</body>
+</html>
